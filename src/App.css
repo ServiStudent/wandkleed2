@@ -2,6 +2,22 @@
   text-align: center;
 }
 
+.ArtworkGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+  gap: 20px;
+}
+
+.ArtworkCard {
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.ArtworkCard img {
+  max-width: 100%;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +51,218 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  background-image: url('../public/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  background-attachment: fixed;
+}
+.Header {
+  text-align: center;
+  margin-bottom: 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 30px;
+  padding: 2px;
+  margin-top: 20px;
+}
+.Title {
+  font-family: 'Satisfy', cursive;
+  font-size: 2.5em;
+  margin: 0;
+  color: #333;
+}
+.Divider {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20"><text x="0" y="15" font-size="20" font-weight="bold" fill="%282c34">~</text></svg>');
+  height: 20px;
+  margin: 10px 0;
+}
+
+.Subtitle {
+  font-family: 'Satisfy', cursive;
+
+  font-size: 1.2em;
+  margin: 10px 0 0;
+  color: #555;
+}
+.Socials {
+  font-family: 'Satisfy', cursive;
+  font-size: 1.5em;
+  margin: 0;
+  color: #333;
+}
+
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.ArtworkGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.ArtworkCard {
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: transform 0.3s;
+}
+
+.LanguageSwitch {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 5px;
+}
+
+.LanguageSwitch button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  color: #555;
+  text-transform: capitalize;
+  transition: background-color 0.3s;
+}
+
+.LanguageSwitch button:hover {
+  background-color: #f8f8f8;
+}
+
+.ArtworkCard:hover {
+  transform: scale(1.05);
+}
+
+.ArtworkCard img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.ArtworkCard h2 {
+  font-size: 1.2em;
+  margin: 0;
+  color: #333;
+}
+
+.ArtworkCard p {
+  font-size: 0.8em;
+  color: #777;
+  margin: 0;
+}
+
+
+.DetailOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s; /* Add transform transition */
+  transform: scale(0.8); /* Start with a smaller size */
+}
+
+.DetailOverlay.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1); /* Grow to full size */
+}
+
+.DetailContent {
+  max-width: 900px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.DetailOverlay.active .DetailContent {
+  transform: scale(1); /* Fully grow in when active */
+}
+
+.DetailOverlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.DetailContent img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.DetailContent h2 {
+  font-size: 1.5em;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.DetailContent p {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+}
+
+.CloseButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #fff;
+}
+
+.Row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Column {
+  flex: 1;
+  margin: 0 5px 10px 0;
+}
+
+.SocialContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.Icon img {
+  width: 40px;
+  height: 40px;
+}
+
+.Username {
+  font-size: 1em;
+  text-align: center;
 }
